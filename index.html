@@ -30,7 +30,10 @@
             display: flex;
             justify-content: center;
             align-items: flex-end;
-            gap: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
+            width: 400px;
+            height: 500px;
         }
 
         .stem {
@@ -38,7 +41,7 @@
             height: 200px;
             background-color: #228B22;
             border-radius: 4px;
-            transform-origin: bottom;
+            position: relative;
             animation: sway 4s ease-in-out infinite;
         }
 
@@ -74,6 +77,36 @@
             height: 40px;
             background-color: #FFA500;
             border-radius: 50%;
+        }
+
+        /* Lazo */
+        .ribbon {
+            position: absolute;
+            bottom: 0;
+            width: 100px;
+            height: 20px;
+            background-color: #FFD700;
+            border-radius: 10px;
+            animation: sway 6s ease-in-out infinite;
+        }
+
+        .ribbon::before, .ribbon::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 100px;
+            background-color: #FFD700;
+            bottom: -80px;
+        }
+
+        .ribbon::before {
+            left: 0;
+            transform: rotate(45deg);
+        }
+
+        .ribbon::after {
+            right: 0;
+            transform: rotate(-45deg);
         }
 
         /* Animación de balanceo */
@@ -117,20 +150,25 @@
     <div class="flower-container">
         <div class="wind"></div>
 
-        <!-- Tulipán 1 -->
+        <!-- Tulipanes -->
+        <div class="stem">
+            <div class="tulip"></div>
+        </div>
+        <div class="stem">
+            <div class="tulip"></div>
+        </div>
+        <div class="stem">
+            <div class="tulip"></div>
+        </div>
+        <div class="stem">
+            <div class="tulip"></div>
+        </div>
         <div class="stem">
             <div class="tulip"></div>
         </div>
 
-        <!-- Tulipán 2 -->
-        <div class="stem">
-            <div class="tulip"></div>
-        </div>
-
-        <!-- Tulipán 3 -->
-        <div class="stem">
-            <div class="tulip"></div>
-        </div>
+        <!-- Lazo -->
+        <div class="ribbon"></div>
     </div>
 </body>
 </html>
