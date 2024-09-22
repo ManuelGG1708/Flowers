@@ -3,49 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Flores Amarillas &lt;3</title>
-    <link rel="stylesheet" href="Css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@1&display=swap" rel="stylesheet">
-    <!--
-        Codigo By: MartL7
-    -->
+    <title>Flores Amarillas para Ti</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #0d1b2a; /* Fondo oscuro */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #FFD700;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            color: #FFD700;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        p {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        .flowers {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .flower {
+            width: 120px;
+            margin: 0 10px;
+        }
+
+        .flower img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Animación de partículas */
+        .background-stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle, rgba(0, 0, 0, 0) 30%, rgba(255, 255, 0, 0.1) 100%);
+            animation: sparkle 4s infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+    </style>
 </head>
 <body>
+    <div class="background-stars"></div>
+    <div class="container">
+        <h1>Flores Amarillas para Ti</h1>
+        <p>Estas flores amarillas son un reflejo de la alegría que traes a mi vida.</p>
+        <p>Gracias por iluminar mis días con tu presencia.</p>
 
-    <div class="Contenedor-Binicio">
-        <button class="Button" id="BVer"> Clicka aqui </button>
-    </div>
-
-    <div class="Con-Emergente">
-        <div id="resultado" class="cua">
-            <p id="res">
-                Hola, antes de iniciar, solo quiero recordarte que eres 
-                muy especial para mí y gracias por todo. &lt;3
-            </p>    
-            <button id="BotonCerrar" class="Button">Cerrar</button>
+        <div class="flowers">
+            <div class="flower">
+                <img src="https://cdn.pixabay.com/photo/2018/08/29/12/20/flowers-3640947_960_720.jpg" alt="Flor Amarilla">
+            </div>
+            <div class="flower">
+                <img src="https://cdn.pixabay.com/photo/2018/08/29/12/20/flowers-3640947_960_720.jpg" alt="Flor Amarilla">
+            </div>
+            <div class="flower">
+                <img src="https://cdn.pixabay.com/photo/2018/08/29/12/20/flowers-3640947_960_720.jpg" alt="Flor Amarilla">
+            </div>
         </div>
     </div>
-
-    <div class="Con-2">
-        <h1 id="Titulo"> Elije una Opcion </h1>
-        <div class="Con">
-            <button class="Button" id="B1"> 1 Flor </button>
-            <button class="Button" id="B12"> 12 Flores :) </button>
-        </div>
-    </div>
-
-    <main class="Contenedor">
-        <canvas id="Flor" class="Flor" width="800" height="600"></canvas>
-
-        <div class="Texto">
-            <h2 id="Text">Para la niña mas Linda del Mundo.</h2>
-        </div>
-
-    </main>
-
-    <script src="Js/app.js"></script>
-    <script src="Js/Dis.js"></script>
 </body>
 </html>
