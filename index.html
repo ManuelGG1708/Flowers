@@ -3,88 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flores Amarillas para Ti</title>
+    <title>Flores Amarillas con Movimiento</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: #0d1b2a; /* Fondo oscuro */
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            color: #FFD700;
+            background-color: #0d1b2a;
             overflow: hidden;
         }
 
-        .container {
-            text-align: center;
-            padding: 20px;
-            color: #FFD700;
-        }
-
-        h1 {
-            font-size: 3em;
-            margin: 0;
-        }
-
-        p {
-            font-size: 1.5em;
-            margin: 10px 0;
-        }
-
-        .flowers {
+        .flower-container {
+            position: relative;
             display: flex;
             justify-content: center;
-            margin-top: 20px;
+            align-items: flex-end;
         }
 
-        .flower {
-            width: 120px;
-            margin: 0 10px;
+        .stem {
+            width: 6px;
+            height: 150px;
+            background-color: #228B22;
+            border-radius: 3px;
+            transform-origin: bottom;
+            animation: sway 4s ease-in-out infinite;
         }
 
-        .flower img {
-            width: 100%;
-            border-radius: 10px;
+        .petal {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #FFD700;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 255, 0, 0.7);
         }
 
-        /* Animación de partículas */
-        .background-stars {
+        .petal:nth-child(1) {
+            top: -25px;
+            left: -25px;
+        }
+
+        .petal:nth-child(2) {
+            top: -25px;
+            right: -25px;
+        }
+
+        .petal:nth-child(3) {
+            top: -60px;
+            left: 0;
+            transform: rotate(45deg);
+        }
+
+        .center {
+            position: absolute;
+            top: -50px;
+            left: -10px;
+            width: 20px;
+            height: 20px;
+            background-color: #FFA500;
+            border-radius: 50%;
+        }
+
+        /* Animación de balanceo para simular el viento */
+        @keyframes sway {
+            0% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(10deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        /* Movimiento del fondo para simular viento */
+        .wind {
             position: absolute;
             top: 0;
-            left: 0;
+            left: -100%;
             width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: radial-gradient(circle, rgba(0, 0, 0, 0) 30%, rgba(255, 255, 0, 0.1) 100%);
-            animation: sparkle 4s infinite;
+            height: 100px;
+            background: linear-gradient(90deg, rgba(255,255,255,0.2), rgba(255,255,255,0));
+            animation: wind 6s infinite linear;
         }
 
-        @keyframes sparkle {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+        @keyframes wind {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 100%;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="background-stars"></div>
-    <div class="container">
-        <h1>Flores Amarillas para Ti</h1>
-        <p>Estas flores amarillas son un reflejo de la alegría que traes a mi vida.</p>
-        <p>Gracias por iluminar mis días con tu presencia.</p>
-
-        <div class="flowers">
-            <div class="flower">
-                <img src="img/flor1.jpg" alt="Flor Amarilla">
-            </div>
-            <div class="flower">
-                <img src="img/flor2.jpg" alt="Flor Amarilla">
-            </div>
-            <div class="flower">
-                <img src="img/flor3.jpg" alt="Flor Amarilla">
-            </div>
+    <div class="flower-container">
+        <div class="wind"></div>
+        <div class="stem">
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="center"></div>
+        </div>
+        <div class="stem">
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="center"></div>
+        </div>
+        <div class="stem">
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="center"></div>
         </div>
     </div>
 </body>
