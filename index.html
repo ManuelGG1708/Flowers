@@ -3,17 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flores Amarillas con Movimiento</title>
+    <title>Ramo de Tulipanes Amarillos</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             background-color: #0d1b2a;
+            color: #FFD700;
             overflow: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .message {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 1.8em;
         }
 
         .flower-container {
@@ -21,66 +30,66 @@
             display: flex;
             justify-content: center;
             align-items: flex-end;
+            gap: 30px;
         }
 
         .stem {
-            width: 6px;
-            height: 150px;
+            width: 8px;
+            height: 200px;
             background-color: #228B22;
-            border-radius: 3px;
+            border-radius: 4px;
             transform-origin: bottom;
             animation: sway 4s ease-in-out infinite;
         }
 
-        .petal {
+        .tulip {
+            position: relative;
+            top: -50px;
+        }
+
+        .tulip::before, .tulip::after {
+            content: '';
             position: absolute;
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 80px;
             background-color: #FFD700;
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(255, 255, 0, 0.7);
+            border-radius: 60% 60% 0 0;
         }
 
-        .petal:nth-child(1) {
-            top: -25px;
-            left: -25px;
+        .tulip::before {
+            transform: rotate(-25deg);
+            left: -40px;
         }
 
-        .petal:nth-child(2) {
-            top: -25px;
-            right: -25px;
-        }
-
-        .petal:nth-child(3) {
-            top: -60px;
-            left: 0;
-            transform: rotate(45deg);
+        .tulip::after {
+            transform: rotate(25deg);
+            right: -40px;
         }
 
         .center {
             position: absolute;
-            top: -50px;
-            left: -10px;
-            width: 20px;
-            height: 20px;
+            top: -10px;
+            left: -15px;
+            width: 30px;
+            height: 40px;
             background-color: #FFA500;
             border-radius: 50%;
         }
 
-        /* Animación de balanceo para simular el viento */
+        /* Animación de balanceo */
         @keyframes sway {
             0% {
                 transform: rotate(0deg);
             }
             50% {
-                transform: rotate(10deg);
+                transform: rotate(5deg);
             }
             100% {
                 transform: rotate(0deg);
             }
         }
 
-        /* Movimiento del fondo para simular viento */
+        /* Viento */
         .wind {
             position: absolute;
             top: 0;
@@ -102,25 +111,25 @@
     </style>
 </head>
 <body>
+    <div class="message">
+        Estas flores son para ti, mi princesita hermosa.
+    </div>
     <div class="flower-container">
         <div class="wind"></div>
+
+        <!-- Tulipán 1 -->
         <div class="stem">
-            <div class="petal"></div>
-            <div class="petal"></div>
-            <div class="petal"></div>
-            <div class="center"></div>
+            <div class="tulip"></div>
         </div>
+
+        <!-- Tulipán 2 -->
         <div class="stem">
-            <div class="petal"></div>
-            <div class="petal"></div>
-            <div class="petal"></div>
-            <div class="center"></div>
+            <div class="tulip"></div>
         </div>
+
+        <!-- Tulipán 3 -->
         <div class="stem">
-            <div class="petal"></div>
-            <div class="petal"></div>
-            <div class="petal"></div>
-            <div class="center"></div>
+            <div class="tulip"></div>
         </div>
     </div>
 </body>
